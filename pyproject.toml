@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "openkat"
+version = "0.1.0"
+description = ""
+authors = ["Donny Peeters <donny.peeters@hotmail.com>"]
+readme = "README.md"
+packages = [{ include = "openkat" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.26.0"
+Django = "3.2.15"
+pydantic = ">=1.8.2"
+django-otp = ">=1.1.3"
+django-markdownify = ">=0.9.1"
+django-two-factor-auth = ">=1.14.0"
+django-password-validators = ">=1.7.0"
+ares = ">=0.7.1"
+beautifulsoup4 = ">=4.11.1"
+cwe = ">=1.6"
+xhtml2pdf = ">=0.2.5"
+dnspython = ">=2.1.0,<2.2.0"
+phonenumbers = "^8.12.55"
+colorama = ">=0.4.5"
+SQLAlchemy = "^1.4.41"
+mmh3 = "^3.0.0"
+alembic = "^1.8.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
