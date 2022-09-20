@@ -38,7 +38,7 @@ However, some features are excluded from this version:
 ## Installation
 
 ```shell
-$ pip install openkat
+$ pip install py-openkat
 ```
 
 ### Running the server
@@ -50,6 +50,7 @@ $ python -m openkat
 ```
 
 and navigate to http://localhost:8000.
+Login with email `super@user.com` and password `superuser`.
 
 
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-openkat"
-version = "0.1.4a3"
+version = "1.1.1"
 description = ""
 authors = ["Donny Peeters <donny.peeters@hotmail.com>"]
 readme = "README.md"
