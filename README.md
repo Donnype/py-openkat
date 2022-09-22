@@ -24,15 +24,19 @@ The benefits and extra features of this package are:
 - Docker not a dependency
 - Adding plugins by creating plugins in a custom `plugins` folder
 
-However, some features are excluded from this version:
-- Bytes: the raw data store, which has been replaced by an in-memory variant
+However, some features are excluded from this version on purpose:
+- Multiple organizations
+- Bytes: the raw data store, which has been replaced by an in-memory variant (hence no proper audit trail is present)
+- Miscellaneous functionality in the interface, such as specifying the depth of an OOI tree
+
+Some missing features are still to be added:
 - Bits
 - Dockerized boefjes
+
+Some features could potentially be added, but do not provide much benefit in a sandbox environment:
 - Deletion Propagation: you have to manually delete every single OOI
 - ScanProfile inheritance: you have to manually add scan profiles to observed OOIs
 - Valid times: you cannot browse the OOI history through time
-- Multiple organizations
-- Some miscellaneous functionality, such as filtering in the UI
 
 
 ## Installation
