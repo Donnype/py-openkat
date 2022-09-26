@@ -15,7 +15,7 @@ build: clean build-boefjes build-rocky
 build-boefjes:
 	# Prepare clean Katalogus db
 	cd openkat/boefjes && poetry run python -m alembic upgrade head
-	cd openkat/boefjes && poetry run python -m seed
+	cd openkat/boefjes && poetry run python -m boefjes.seed
 
 build-rocky:
 	# Prepare clean Rocky db

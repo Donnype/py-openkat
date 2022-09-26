@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-openkat"
-version = "1.1.1"
+version = "1.2.0"
 description = ""
 authors = ["Donny Peeters <donny.peeters@hotmail.com>"]
 readme = "README.md"
@@ -19,9 +19,10 @@ exclude = [
     "**/.*ignore",
     "**/.nvmrc",
     "**/.sassrc",
+    "**/.flake8",
     "**/.djlintrc",
     "**/.editorconfig",
-    "**/Dockerfile",
+    "**/Dockerfile*",
     "**/Makefile",
     "**/alembic.ini",
     "**/base.yml",
@@ -38,6 +39,8 @@ exclude = [
     "openkat/**/tests",
     "openkat/OOI_database_seed.json",
     "openkat/package.json",
+    "openkat/uwsgi.ini",
+    "openkat/octopoes/img/*",
 ]
 
 [tool.poetry.dependencies]
@@ -59,6 +62,7 @@ SQLAlchemy = "^1.4.41"
 mmh3 = "^3.0.0"
 alembic = "^1.8.1"
 python-gettext = "^4.1"
+django-csp = ">=3.7"
 
 
 [build-system]
