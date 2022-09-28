@@ -25,19 +25,14 @@ The benefits and extra features of this package are:
 - Adding plugins by creating plugins in a custom `plugins` folder
 
 However, some features are excluded from this version on purpose:
-- Multiple organizations
-- Bytes: the raw data store, which has been replaced by an in-memory variant (hence no proper audit trail is present)
-- Miscellaneous functionality in the interface, such as specifying the depth of an OOI tree
-
-Some missing features are still to be added:
-- Bits
-- Dockerized boefjes
-
-Some features could potentially be added, but do not provide much benefit in a sandbox environment:
+- Audit trailing using Bytes
+- Miscellaneous functionality in the interface, such as specifying a depth of an OOI tree and custom images in the KATalogus
 - Deletion Propagation: you have to manually delete every single OOI
 - ScanProfile inheritance: you have to manually add scan profiles to observed OOIs
 - Valid times: you cannot browse the OOI history through time
 
+Some missing features are still to be added:
+- Bits
 
 ## Installation
 
@@ -45,7 +40,7 @@ Some features could potentially be added, but do not provide much benefit in a s
 $ pip install py-openkat
 ```
 
-### Running the server
+### Usage
 
 To start the instance, run
 
@@ -56,6 +51,9 @@ $ python -m openkat
 and navigate to http://localhost:8000.
 Login with email `super@user.com` and password `superuser`.
 
+### Dependencies
+
+To use the Dockerized boefjes, you must have Docker installed on your machine.
 
 
 ## Contributing

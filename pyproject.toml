@@ -1,9 +1,6 @@
 [tool.poetry]
 name = "py-openkat"
 version = "1.2.0"
-description = ""
-authors = ["Donny Peeters <donny.peeters@hotmail.com>"]
-readme = "README.md"
 packages = [{ include = "openkat" }]
 include  = ["openkat/*.py"]
 exclude = [
@@ -43,6 +40,15 @@ exclude = [
     "openkat/octopoes/img/*",
 ]
 
+authors = ["Donny Peeters <donny.peeters@hotmail.com>"]
+maintainers = ["Donny Peeters <donny.peeters@hotmail.com>"]
+description = "A lightweight version of OpenKAT."
+readme = "README.md"
+homepage = "https://github.com/Donnype/py-openkat"
+repository = "https://github.com/Donnype/py-openkat"
+keywords = ["OpenKAT", "Security Analysis"]
+
+
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.26.0"
@@ -60,9 +66,13 @@ phonenumbers = "^8.12.55"
 colorama = ">=0.4.5"
 SQLAlchemy = "^1.4.41"
 mmh3 = "^3.0.0"
-alembic = "^1.8.1"
 python-gettext = "^4.1"
 django-csp = ">=3.7"
+docker = "^6.0.0"
+
+
+[tool.poetry.dev-dependencies]
+alembic = "^1.8.1"
 
 
 [build-system]
