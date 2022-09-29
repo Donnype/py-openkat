@@ -40,6 +40,7 @@ However, some features are excluded from this version on purpose:
 
 Some missing features are still to be added:
 - Bits
+- Object persistence beyond server lifetime
 
 ## Installation
 
@@ -57,6 +58,8 @@ $ python -m openkat
 
 and navigate to http://localhost:8000.
 Login with email `super@user.com` and password `superuser`.
+You can start adding your objects now (see the official documentation).
+Note: restarting the service clears your object database.
 
 ### Dependencies
 

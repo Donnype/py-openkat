@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-openkat"
-version = "1.2.0"
+version = "1.2.1"
 packages = [{ include = "openkat" }]
 include  = ["openkat/*.py"]
 exclude = [
@@ -69,6 +69,14 @@ mmh3 = "^3.0.0"
 python-gettext = "^4.1"
 django-csp = ">=3.7"
 docker = "^6.0.0"
+cryptography = ">=3.4.3"
+forcediphttpsadapter = ">=1.0.2"
+pybinaryedge = ">=0.5"
+pynetdicom = "^2.0.2"
+python-libnmap = ">=0.7.3"
+python-Wappalyzer = ">=0.3.1"
+shodan = ">=1.25.0"
+wpscan-out-parse = ">=1.9.3"
 
 
 [tool.poetry.dev-dependencies]
