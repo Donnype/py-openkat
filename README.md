@@ -48,7 +48,11 @@ Some missing features are still to be added:
 $ pip install py-openkat
 ```
 
-### Usage
+### Dependencies
+
+To use the Dockerized boefjes, you must have Docker installed on your machine.
+
+## Usage
 
 To start the instance, run
 
@@ -61,10 +65,47 @@ Login with email `super@user.com` and password `superuser`.
 You can start adding your objects now (see the official documentation).
 Note: restarting the service clears your object database.
 
-### Dependencies
 
-To use the Dockerized boefjes, you must have Docker installed on your machine.
+### Adding your own plugins
 
+To extend the functionality of openkat with custom Boefjes create a file (e.g `kat.py`)
+with the following contents:
+```python3
+import openkat
+
+openkat.start(plugin_dir="plugins")
+```
+Then, create a directory in your current working directory called `plugins` and copy
+[an internal Boefje](https://github.com/Donnype/nl-kat-boefjes/tree/869167d1b723a1a58c044d45f668fbade33cf372/boefjes/plugins)
+(starting with `kat_`) into the `plugins` folder.
+
+If you are like me and just want a one-liner:
+```shell
+$ mkdir plugins && \
+  mkdir plugins/kat_dns2 && \
+  for file in "__init__.py" "boefje.py" "description.md" "main.py" "normalizer.py" "requirements.txt" ; \
+  do curl https://raw.githubusercontent.com/Donnype/nl-kat-boefjes/869167d1b723a1a58c044d45f668fbade33cf372/boefjes/plugins/kat_dns/$file > plugins/kat_dns2/$file; \
+  done
+```
+
+Change the folder name, and at least the `id`, and `name` of the `Boefje` model definition in `boefje.py`, together with
+the `name` and `module` (this should be `"{the folder name}.{module name}"`) of the `Normalizer` model definition.
+Be careful not to use an existing folder name or this will overwrite an existing boefje (and require re-installation).
+
+Have I told you I like one-liners? (Note: `sed` behaves differently on OS X)
+```shell
+$ sed -i -e "s/id\=\"dns-records\"/id\=\"my-id\"/g" \
+    -e "s/module\=\"kat_dns\.normalize\"/module\=\"kat_dns2.normalize\"/g" \
+    -e "s/name\=\"DnsRecords\"/name\=\"MyBoefje\"/g" \
+    -e "s/name\=\"kat_dns_normalize\"/name\=\"kat_dns2_normalize\"/g" \
+    plugins/kat_dns2/boefje.py
+```
+
+Start the service by running
+```shell
+$ python -m kat
+```
+and you should be able to use it as usual, but with the added functionality.
 
 ## Contributing
 

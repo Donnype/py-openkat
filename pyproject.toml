@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-openkat"
-version = "1.2.2"
+version = "1.2.2.post1"
 packages = [{ include = "openkat" }]
 include  = ["openkat/*.py"]
 exclude = [
